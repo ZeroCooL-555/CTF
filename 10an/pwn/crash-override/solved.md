@@ -10,7 +10,7 @@ we can see that we have a main function.
 Looking at the disassembly for main we first see all 
 the local variables being set and then some strings being printed.
 
-[Picture of the disassembly]
+![Disassembly](https://github.com/ZeroCooL-555/CTF/blob/master/10an/pwn/crash-override/1.png)
 
 Looking further we get a very interesting disassembly
 
@@ -25,7 +25,7 @@ if `local_14` is equal to `0x6275726e`
 we will jump to `access_granted` and if not we jump to `LAB_000113aa`
 which just throws at us "Not authenticated" and our row number.
 
-[Picture of LAB_000113aa disassembly]
+![LAB Disassembly](https://github.com/ZeroCooL-555/CTF/blob/master/10an/pwn/crash-override/2.png)
 
 
 ## The attack plan
