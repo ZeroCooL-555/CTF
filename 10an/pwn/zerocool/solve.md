@@ -9,7 +9,7 @@ after running `readelf -s zero_cool | grep FUNC` we see two interesting function
 
 Opening the binary in ghidra and looking at the disassembly from the function `username` we quickly get to a section that looks peculiar
 
-[Picture of username disassembly]
+![Username Disassembly](https://github.com/ZeroCooL-555/CTF/blob/master/10an/pwn/zerocool/username.png)
 
 As we can see if we pass in the username `debug` we get where in memory the address of `system` is and where the address of `/bin/sh` is.
 
@@ -17,7 +17,7 @@ Now the program wants us to pass a password. Disassembling the function `passwor
 very dangerous function called `gets()` 
 
 
-[Picture of the password decompilation]
+![Password Disassembly](https://github.com/ZeroCooL-555/CTF/blob/master/10an/pwn/zerocool/password.png)
 
 
 explanation from the man page 
