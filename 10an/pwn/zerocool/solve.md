@@ -10,8 +10,9 @@ after running `readelf -s zero_cool | grep FUNC` we see two interesting function
 Opening the binary in ghidra and looking at the disassembly from the function `username` we quickly get to a section that looks peculiar
 
 ![Username Disassembly](https://github.com/ZeroCooL-555/CTF/blob/master/10an/pwn/zerocool/username.png)
+![Username Decompiled](https://github.com/ZeroCooL-555/CTF/blob/master/10an/pwn/zerocool/username_decompiled.png)
 
-As we can see if we pass in the username `debug` we get where in memory the address of `system` is and where the address of `/bin/sh` is.
+As we can see if we pass in the username `debug` we get where in memory the address of `shell` is and where the address of `/bin/sh` is.
 
 Now the program wants us to pass a password. Disassembling the function `password` we very quickly see that our input is passed to a
 very dangerous function called `gets()` 
@@ -30,7 +31,7 @@ Let's abuse `gets()`. After some trial and error the sweet spot is found to be `
 ### The Attack
 
 Starting out we send the program a username in this case `debug` after that we grab the two leaked addresses. Now we are prompted for a password, we pass in our 27 A's and then call the first leaked address.
-After having called the first address we add `4 bytes` worth of padding to be able to set the parameter for the first function. If done correctly we should have a call to `system` with the parameter `/bin/sh`.
+After having called the first address we add `4 bytes` worth of padding to be able to set the parameter for the first function. If done correctly we should have a call to `shell` with the parameter `/bin/sh`.
 
 ```python
 #!/usr/bin/python3
