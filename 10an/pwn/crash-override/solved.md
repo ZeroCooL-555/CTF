@@ -30,9 +30,9 @@ which just throws at us "Not authenticated" and our row number.
 
 ## The attack plan
 
-So with all this information we can start to build out our exploit
+So with all this information we can start to build out our exploit.
 
-first we know that we have control over `local_14` because that's the input we provide. Overflowing the buffer by sending in 15 A's then passing in the address given in the disassembly should give us a shell.
+First, we know that we have control over `local_14` so overflowing the buffer by sending in 15 A's then passing in the address given in the disassembly should give us a shell.
 
 ```python
 #!/usr/bin/python3
