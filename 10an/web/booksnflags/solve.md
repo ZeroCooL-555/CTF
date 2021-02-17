@@ -1,5 +1,6 @@
-# Indirect Direct Object Reference
+# Logic Bug
 
-[Picture in burp]
+![Burp picture](https://github.com/ZeroCooL-555/CTF/blob/master/10an/web/booksnflags/Burp.png)
+![Flag](https://github.com/ZeroCooL-555/CTF/blob/master/10an/web/booksnflags/Solved.png)
 
-[Picture of Flag]
+**Flag: 10an{W#y_$0.negaT|VE?}**
