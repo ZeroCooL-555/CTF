@@ -6,7 +6,7 @@ the function `getflag()`. Because this code is running client side we can manipu
 
 - Start the timer
 - Open up inspect elements and go to the console tab
-- set the timer variable to 0 by passing in this command *time = 0*
+- set the timer variable to 0 by passing in this command `time = 0`
 - Now the flag should be displayed on the webpage
 
 **FLAG: bcactf{1_tH1nK_tH3_CtF_w0u1D_b3_0v3r_bY_1O0_dAy5}**
