@@ -1,0 +1,16 @@
+name: Sham
+description: |
+        We have noticed some weird network traffic coming from two of our system administrators. 
+        We managed to capture some of the data that was being sent and turns out it's just an image.
+        Something just isn't right, i believe there is more to this than just an image.
+
+        Can you take a look at this for us?
+
+category: Forensics
+flags: 10an{23r0_W1d7h_53cUR3_3ncRyP710N}
+author: ZeroC00L
+files:
+    - "work-note.txt"
+    - "sysadmin.jpg"
+hints:
+    - hint: We have also noticed that they do tend to talk alot about widths for characters or something along those lines. Hope this helps
