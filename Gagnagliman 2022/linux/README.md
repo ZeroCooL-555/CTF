@@ -38,7 +38,7 @@ hidden[ = gg{
 A = 4
 ```
 
-**Flag: gg{https://www.youtube.com/watch?v=gJRXodZoP40&t=18s}**
+`Flag: gg{https://www.youtube.com/watch?v=gJRXodZoP40&t=18s}`
 
 
 ## esc-server 3
@@ -52,20 +52,20 @@ find /home/martin/shredder/ -type f -newermt "2022-02-22" ! -newermt "2022-02-23
 partially correct. Sorts the filenames that have double digits correct for example: p44,p12,p26 But fails to correctly sort single digit files for example: p1,p2,p3
 
 Manually separating the one digit files and the two digit files we can create two text files on the server `lower.txt` and `higher.txt`
-the server does not have a text editor so just using `echo` and writing the lines to the files will work just file. When that has been done we can read both the files with the commands 
+the server does not have a text editor so just using `echo` and writing the lines to the files will work just fine. When that has been done we can read both the files with the commands 
 ```bash 
 cat lower.txt | while read files; do cat $files; done
 ```
 
-For the lower numbered files the output would be `gg{https:/` and the higher numbered files would output `/www.youtube.com/watch?v=0Jl-Hr137uM#unb0rken}` adding the two strings together could create a valid flag 
+For the lower numbered files the output would be `gg{https:/` and the higher numbered files would output `/www.youtube.com/watch?v=0Jl-Hr137uM#unb0rken}` adding the two strings together would create a valid flag 
 
-**gg{https://www.youtube.com/watch?v=0Jl-Hr137uM#unb0rken}**
+`gg{https://www.youtube.com/watch?v=0Jl-Hr137uM#unb0rken}`
 
 ## esc-server 4
 
 ![chall4](images/challenge-4.png)
 
-Looking at our sudo permissions we see that we are allowed to use sudo on the cat binary. This is starting to look like a privielege escalation challenge so after looking over at [GTFObins](https://gtfobins.github.io/) and finding nothing of value there we should look at the version of sudo the server is running, sure enough it's an old version of sudo. Simply searching the web for `sudo 1.8.28patched exploit` we get a post detailing a security bypass in the sudo version we are running [sudo security bypass](https://packetstormsecurity.com/files/154857/sudo-1.8.28-Security-Bypass.html)
+Looking at our sudo permissions we see that we are allowed to use sudo on the cat binary. This is starting to look like a privilege escalation challenge, so after looking over at [GTFObins](https://gtfobins.github.io/) and finding nothing of value there we should look at the version of sudo the server is running, sure enough it's an old version of sudo. Simply searching the web for `sudo 1.8.28patched exploit` we get a post detailing a security bypass in the sudo version we are running [sudo security bypass](https://packetstormsecurity.com/files/154857/sudo-1.8.28-Security-Bypass.html)
 
 ![sudo-vuln](images/security-bypass.png)
 
@@ -73,7 +73,7 @@ Looking at our sudo permissions we see that we are allowed to use sudo on the ca
 
 ![chall5](images/challenge-5.png)
 
-We can use the same exploit we used for *esc-server 4* but instead point to the root flag.
+We can use the same exploit we used for **esc-server 4** but instead point to the root flag.
 
 ![chall5](images/security-bypass2.png)
 
