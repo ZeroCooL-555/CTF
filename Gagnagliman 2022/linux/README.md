@@ -30,7 +30,7 @@ Checking jon's **.zsh_history**
 ```
 Now we just find the flag and reverse the sed command
 
-![partial-flag](partial-flag.png)
+![partial-flag](images/partial-flag.png)
 
 ```
 hidden[ = gg{
@@ -43,7 +43,7 @@ A = 4
 
 ## esc-server 3
 
-![chall3](challenge-3.png)
+![chall3](images/challenge-3.png)
 
 ```bash
 find /home/martin/shredder/ -type f -newermt "2022-02-22" ! -newermt "2022-02-23" 2>/dev/null | awk -vFS=/ -vOFS=/ '{ print $NF,$0 }' | sort -n -t / | cut -f2- -d /
@@ -71,7 +71,7 @@ Looking at our sudo permissions we see that we are allowed to use sudo on the ca
 
 ## esc-server 5
 
-![chall5](challenge-5.png)
+![chall5](images/challenge-5.png)
 
 We can use the same exploit we used for *esc-server 4* but instead point to the root flag.
 
